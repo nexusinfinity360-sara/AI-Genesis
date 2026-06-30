@@ -1,5 +1,5 @@
-import Header from "@/components/Header";
-import Sidebar from "@/components/Sidebar";
+import Header from "@/components/layout/Header";
+import Sidebar from "@/components/layout/Sidebar";
 
 export default function Home() {
   return (
@@ -10,13 +10,13 @@ export default function Home() {
         <Header />
 
         <div className="flex flex-1 items-center justify-center">
-          <div className="rounded-xl bg-white p-8 shadow-lg">
-            <h2 className="mb-2 text-2xl font-semibold">
+          <div className="rounded-xl bg-white p-10 shadow-lg">
+            <h2 className="text-3xl font-bold">
               Welcome to Genesis AI 🚀
             </h2>
 
-            <p className="text-gray-600">
-              Professional AI Chat Interface
+            <p className="mt-4 text-gray-600">
+              Professional AI Platform is under construction.
             </p>
           </div>
         </div>
