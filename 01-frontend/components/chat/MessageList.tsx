@@ -1,26 +1,18 @@
 import ChatBubble from "./ChatBubble";
+import { Message } from "@/types/chat";
 
-const messages = [
-  {
-    id: 1,
-    role: "assistant" as const,
-    message: "👋 Hello! I am Genesis AI. How can I help you today?",
-  },
-  {
-    id: 2,
-    role: "user" as const,
-    message: "Hi Genesis! Build me an AI platform.",
-  },
-];
+interface MessageListProps {
+  messages: Message[];
+}
 
-export default function MessageList() {
+export default function MessageList({ messages }: MessageListProps) {
   return (
-    <div className="flex flex-1 flex-col gap-4 overflow-y-auto p-6">
-      {messages.map((msg) => (
+    <div className="flex-1 space-y-4 overflow-y-auto p-4">
+      {messages.map((message) => (
         <ChatBubble
-          key={msg.id}
-          role={msg.role}
-          message={msg.message}
+          key={message.id}
+          role={message.role}
+          message={message.content}
         />
       ))}
     </div>
