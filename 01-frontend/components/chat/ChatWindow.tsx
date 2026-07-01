@@ -25,13 +25,18 @@ export default function ChatWindow() {
       createdAt: new Date(),
     };
 
-    setMessages((prev) => [...prev, userMessage]);
+    console.log("Before:", messages);
+
+    setMessages((prev) => {
+      const updated = [...prev, userMessage];
+      console.log("After:", updated);
+      return updated;
+    });
   };
 
   return (
     <div className="flex h-full flex-col rounded-xl bg-gray-50 shadow-lg">
       <MessageList messages={messages} />
-
       <ChatInput onSend={sendMessage} />
     </div>
   );
